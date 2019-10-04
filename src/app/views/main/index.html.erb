@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <title>OpenEd</title>
+
+      <!--  css-->
+      <%= stylesheet_link_tag 'bootstrap.min.css' %>
+      <%= stylesheet_link_tag 'fixed.css' %>
+      <%= stylesheet_link_tag 'video-fixed.css' %>
+      <%= javascript_include_tag 'https://kit.fontawesome.com/bb76d470c5.js' %>
+      <%= stylesheet_link_tag 'style.css' %>
+
+    </head>
+    <body data-spy="scroll" data-target="#navbarResponsive">
+      <header>
+        <!-- NAVBAR SECTION -->
+        <nav class="navbar navbar-expand-* navbar-dark fixed-top">
+          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <h2 class="navbar-brand">OpenEd</h2>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="#services">Find Mentor</a></li>
+              <li class="nav-item"><a class="nav-link" href="#discount">Recommended Mentors</a></li>
+              <li class="nav-item"><a class="nav-link" href="#faq">Profile</a></li>
+              <li class="nav-item"><a class="nav-link" href="#resources">Logout</a></li>
+            </ul>
+          </div>
+        </nav>
+        <!-- END NAVBAR SECTION -->
+
+        <!-- HOME SECTION -->
+        <div id="home">
+          <div class="landing">
+            <!-- VIDEO BACKGROUND -->
+            <div class="video-background">
+              <div class="video-wrap">
+                <div id="video">
+                  <%= video_tag 'video-balloon.mp4', :id => "video-bg", :autoplay => true, :loop => true, :muted => true, :playsinline => true %>
+                </div>
+              </div>
+            </div>
+
+            <!-- CAPTION -->
+            <div class="caption text-center">
+              <h1>OpenEd</h1>
+              <h3><a href="">Connect</a> instantly with college mentors. Start exploring the things that really interest you and find your passion.</h3>
+              <a class="btn btn-outline-light btn-lg" href="#services">Register</a>
+            </div>
+          </div>
+        </div>
+        <!-- END HOME SECTION -->
+      </header>
+
+      <!-- ABOUT SECTION -->
+      <section id="about-sect">
+        <div id="about" class="offset">
+          <div class="separator col-12 text-center">
+            <%= image_tag 'separator.png' %>
+          </div>
+          <div class="col-12 narrow text-center">
+            <h1>About Us</h1>
+            <p class="lead"> At OpenEd, we know that your school classes can seem pointless and boring at times. We know the struggle of wishing
+        you could be learning what YOU WANT. That's why our college mentors are ready to start tutoring you in the subjects that YOU want to learn... or
+        we can help you pass that big test that's coming up next week. Whatever your needs, our mentors are here to help.</p>
+          </div>
+          <div class="separator col-12 text-center">
+            <%= image_tag 'separator.png' %>
+          </div>
+
+          <div class="jumbotron">
+            <div class="row">
+              <div class="col-md-4 narrow text-left">
+                <span style="padding-left:100px; font-size:80px;"><i class="fas fa-home"></i></span>
+                <h3>Local College Mentors</h3>
+                <p class="lead">Our mentors are hand-picked from local colleges near you. These mentors are part of your community, making it effortless
+                  to set up appointments near you.</p>
+              </div>
+              <div class="col-md-4 narrow text-left">
+                <span style="padding-left:100px; font-size:80px;"><i class="fas fa-award"></i></span>
+                <h3>Passionate Instructors</h3>
+                <p class="lead">Our goal is to provide quality and affordable education for ALL students in our local communities. In turn, our mentors
+                  care about your education, and want to help you find your passion.</p>
+              </div>
+              <div class="col-md-4 narrow text-left">
+                <span style="padding-left:100px; font-size:80px;"><i class="fas fa-id-card"></i></span>
+                <h3>Customized Learning</h3>
+                <p class="lead">Create your profile and customize it to your liking to find the best possible mentors for you. Our system will match you with
+                  a mentor based on your areas of interest.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- END ABOUT SECTION -->
+
+      <!-- SECTION BACKGROUND -->
+      <div id="services" class="offset">
+        <div class="fixed-background">
+
+          <!-- IMAGE BACKGROUND -->
+          <div class="fixed-wrap">
+            <div class="fixed">
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="container">
+          <p>Brandon Hong - Copyright &copy; 2019</p>
+        </div>
+      </footer>
+
+      <!-- Script Sources -->
+      <%= javascript_include_tag 'jquery-3.3.1.min.js' %>
+      <%= javascript_include_tag 'bootstrap.min.js' %>
+      <%= javascript_include_tag 'navbar.js' %>
+      <%= javascript_include_tag 'https://use.fontawesome.com/releases/v5.5.0/js/all.js' %>
+    </body>
+  </html>

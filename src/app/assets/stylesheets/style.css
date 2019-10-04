@@ -1,0 +1,181 @@
+
+
+
+/*---NAVBAR---*/
+.navbar
+{
+  font-size: 1rem;       /* 1rem = 16px */
+  letter-spacing: .1rem;
+}
+
+.fixed-top
+{
+  background: rgba(0, 0, 0, 0);
+}
+
+.navbar-brand
+{
+  float: center;
+  padding-right: 47%;
+}
+
+/* HAMBURGER */
+.navbar-toggler
+{
+  float: left;
+}
+
+/* navbar logo */
+.navbar-brand img
+{
+  height: 3.5rem;
+}
+
+/* navbar extra spacing */
+.navbar-nav li
+{
+  padding-right: .7rem;
+}
+
+/* nav link styling */
+.navbar-dark .navbar-nav .nav-link
+{
+  color: white;
+  padding-top: .8rem;
+}
+
+/* .active and :hover nav link style */
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link:hover
+{
+  color: #ddc65f;
+}
+
+/* ---HOME--- */
+/* background image */
+/* .home-inner
+{
+  background-image: url(../images/Road-Tripping.mp4);
+} */
+
+/* VIDEO */
+.video-background
+{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* home text */
+.caption
+{
+  width: 100%;
+  max-width: 100%;
+  position: absolute;
+  top: 35%;
+  z-index: 1;
+  color: white;
+}
+
+.caption h1
+{
+  font-size: 3.8rem;
+  font-weight: 700;
+  letter-spacing: .3rem;
+
+  text-shadow: .1rem .1rem .8rem black;
+  padding-bottom: 1rem;
+}
+
+.caption h3
+{
+  font-size: 2rem;
+  text-shadow: .1rem .1rem .5rem black;
+  padding-bottom: 1.6rem;
+}
+
+.caption h3 a
+{
+  color: #ddc65f;
+}
+
+/* get started btn style */
+.btn-lg
+{
+  border-width: medium;
+  border-radius: 0;
+  text-shadow: .1rem .1rem .5rem black;
+  padding: .6rem 1.3rem;
+  font-size: 1.1rem;
+}
+
+/* ABOUT SECTION */
+.separator img
+{
+  height: 25px;
+  width: 1100px;
+}
+
+/* GENERAL STYLING */
+.col-md-8 {
+  margin: 2rem auto 8rem;
+  padding-top: 2rem;
+}
+.col-md-8 h1 {
+    font-size: 2.4rem;
+  }
+.narrow {
+  width: 75%;
+  margin: 1.5rem auto;
+  padding-top: 2rem;
+}
+.narrow h1 {
+    font-size: 2.4rem;
+  }
+.btn-secondary {
+  border-width: medium;
+  border-radius: 0;
+  padding: .6rem 1.2rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin: 1rem;
+  border-color: #1EBBA3;
+  background-color: #1EBBA3;
+  color: white;
+}
+.btn-secondary:hover,
+.btn-secondary:focus {
+  border-color: #189582;
+  background-color: #189582;
+  color: white;
+}
+
+/* Mobile compatibility settings */
+/* half sizes of elements */
+@media (max-width: 768px)
+{
+  .caption h1
+{
+  font-size: 1.4rem;
+  letter-spacing: .15rem;
+  padding-bottom: .5rem;
+}
+
+.caption h3
+{
+  font-size: 1.1rem;
+  padding-bottom: 1.2rem;
+}
+
+/* get started btn style */
+.btn-lg
+{
+  padding: .5rem 1rem;
+  font-size: 1rem;
+}
+
+}
+
+/* NAVBAR FORCE HAMBURGER */
+
