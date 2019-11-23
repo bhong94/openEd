@@ -6971,3 +6971,107 @@ Processing by MainController#index as HTML
 Completed 200 OK in 83ms (Views: 81.5ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/main/login" for 159.91.171.185 at 2019-11-23 18:41:45 -0500
+Cannot render console from 159.91.171.185! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MainController#login as HTML
+  Rendering main/login.html.erb within layouts/application
+  Rendered main/login.html.erb within layouts/application (304.0ms)
+Completed 200 OK in 353ms (Views: 345.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/parentProfile" for 159.91.171.185 at 2019-11-23 18:41:47 -0500
+Cannot render console from 159.91.171.185! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MainController#parentProfile as HTML
+  Rendering main/parentProfile.html.erb within layouts/application
+  Rendered main/parentProfile.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 41ms (Views: 40.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/parentProfile" for 159.91.171.185 at 2019-11-23 18:41:50 -0500
+Cannot render console from 159.91.171.185! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MainController#parentProfile as HTML
+  Rendering main/parentProfile.html.erb within layouts/application
+  Rendered main/parentProfile.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 37ms (Views: 35.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/parentProfile" for 159.91.171.185 at 2019-11-23 18:41:56 -0500
+Cannot render console from 159.91.171.185! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MainController#parentProfile as HTML
+  Rendering main/parentProfile.html.erb within layouts/application
+  Rendered main/parentProfile.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 51ms (Views: 49.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/parentProfile" for 159.91.171.185 at 2019-11-23 18:41:57 -0500
+Cannot render console from 159.91.171.185! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MainController#parentProfile as HTML
+  Rendering main/parentProfile.html.erb within layouts/application
+  Rendered main/parentProfile.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 35ms (Views: 34.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/parentProfile" for 159.91.171.185 at 2019-11-23 18:41:57 -0500
+Cannot render console from 159.91.171.185! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MainController#parentProfile as HTML
+  Rendering main/parentProfile.html.erb within layouts/application
+  Rendered main/parentProfile.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 53ms (Views: 51.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/parentProfile" for 159.91.171.185 at 2019-11-23 18:42:01 -0500
+Cannot render console from 159.91.171.185! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MainController#parentProfile as HTML
+  Rendering main/parentProfile.html.erb within layouts/application
+  Rendered main/parentProfile.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 51ms (Views: 49.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/parentProfile" for 159.91.171.185 at 2019-11-23 18:45:56 -0500
+Cannot render console from 159.91.171.185! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MainController#parentProfile as HTML
+  Rendering main/parentProfile.html.erb within layouts/application
+  Rendered main/parentProfile.html.erb within layouts/application (229.8ms)
+Completed 200 OK in 282ms (Views: 275.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/parentProfile" for 159.91.171.185 at 2019-11-23 18:46:00 -0500
+Cannot render console from 159.91.171.185! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MainController#parentProfile as HTML
+  Rendering main/parentProfile.html.erb within layouts/application
+  Rendered main/parentProfile.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 35ms (Views: 34.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/parentProfile" for 159.91.171.185 at 2019-11-23 18:46:01 -0500
+Cannot render console from 159.91.171.185! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MainController#parentProfile as HTML
+  Rendering main/parentProfile.html.erb within layouts/application
+  Rendered main/parentProfile.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 35ms (Views: 33.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/parentProfile" for 159.91.171.185 at 2019-11-23 18:46:14 -0500
+Cannot render console from 159.91.171.185! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MainController#parentProfile as HTML
+  Rendering main/parentProfile.html.erb within layouts/application
+  Rendered main/parentProfile.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 35ms (Views: 34.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/login" for 159.91.171.185 at 2019-11-23 18:46:19 -0500
+Cannot render console from 159.91.171.185! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MainController#login as HTML
+  Rendering main/login.html.erb within layouts/application
+  Rendered main/login.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 38ms (Views: 36.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/parentProfile" for 159.91.171.185 at 2019-11-23 18:46:20 -0500
+Cannot render console from 159.91.171.185! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MainController#parentProfile as HTML
+  Rendering main/parentProfile.html.erb within layouts/application
+  Rendered main/parentProfile.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 48ms (Views: 47.1ms | ActiveRecord: 0.0ms)
+
+
