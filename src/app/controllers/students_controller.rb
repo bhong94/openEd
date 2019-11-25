@@ -10,6 +10,7 @@ class StudentsController < ApplicationController
   # GET /students/1
   # GET /students/1.json
   def show
+    @mentors = Mentor.text_search(params[:query]).page(params[:page]).per_page(5)
   end
 
   # GET /students/new

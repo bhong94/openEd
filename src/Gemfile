@@ -15,6 +15,9 @@ gem 'pg'
 # Handles user accounts and sessions
 gem 'devise'
 
+# pagination library for search tab
+gem 'will_paginate', '> 3.0'
+
 ############################################################
 
 # Use Puma as the app server

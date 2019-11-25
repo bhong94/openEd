@@ -7,9 +7,11 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag 'bootstrap.min.css' %>
-    <%= stylesheet_link_tag 'style.css' %>
-    <%= javascript_include_tag 'bootstrap.min.js' %>
+
+    <!-- General css and js dependencies -->
+    <%= stylesheet_link_tag 'bootstrap.min.css' %>      <!-- bootstrap is used for html styling -->
+    <%= stylesheet_link_tag 'style.css' %>              <!-- my app-wide style sheet -->
+    <%= javascript_include_tag 'bootstrap.min.js' %>    <!-- bootstrap javascript dependency -->
 
     <!-- NAVBAR SECTION -->
         <nav class="navbar navbar-expand-md navbar-dark fixed-top">
@@ -22,6 +24,8 @@
             <span class="navbar-nav mr-auto">       <!-- This is a spacer to move dropdown menu to the right -->
             </span>
             <ul class="navbar-nav">
+
+                <!-- IF a user is logged in, render the user menu -->
                 <% if current_user %>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -29,19 +33,26 @@
                       
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Dashboard</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
+
+                        <!-- if the current user is a mentor account, render a link to the MENTOR PROFILE PAGE -->
+                        <% if current_user.isMentor && current_user.mentor %>
+                        <%= link_to 'Dashboard', mentor_path(current_user.mentor.id) , :class => "dropdown-item" %>
+                        <!-- elsif the current user is a STUDENT ACCOUNT, render a link to the STUDENT PROFILE PAGE -->
+                        <% elsif current_user.student %>
+                        <%= link_to 'Dashboard', student_path(current_user.student.id) , :class => "dropdown-item" %>
+                        <% end %>
+                        <!-- IF no user is signed in, do NOT show a link to any profile page -->
                     </div>
                 </li>
                 <% else %>
                 <% end %>
+
+                <!-- IF a user is logged in, show the logout button -->
                 <% if current_user %>
                 <li class="nav-item">
                     <%= link_to 'Logout', destroy_user_session_path , :class => "nav-link", method: :delete %>
                 </li>
+                <!-- ELSE, show the login and register buttons -->
                 <% else %>
                 <li class="nav-item">
                     <%= link_to 'Login', new_user_session_path , :class => "nav-link" %>

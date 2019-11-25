@@ -6,7 +6,13 @@
 }
 .sect
 {
-    width: 33.33%;
+    width: 25%;
+    border: solid rgba(0, 0, 0, 0.6) 1px;
+}
+
+.nav-link
+{
+    color: black;
 }
 
 .nav-link.active
