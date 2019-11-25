@@ -1,4 +1,4 @@
-OpenEd
+# OpenEd
 
 This is a web application developed using Ruby on Rails with the aim of connecting college-level student educators with local primary and secondary education students to provide more accessible education opportunities.
 
