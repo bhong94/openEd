@@ -1,0 +1,17 @@
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<!-- ruby logic to specify who the message is for -->
+<h1>
+    New Message to 
+    <% if current_user.isMentor %>
+        <%= @chat.studentName %>
+    <% else %>
+        <%= @chat.mentorName %>
+    <% end %>
+</h1>
+
+<%= render 'form', message: @message %>

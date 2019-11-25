@@ -1,4 +1,4 @@
-
+<!-- Written by Brandon Hong -->
 <!DOCTYPE html>
   <html lang="en">
     <head>
@@ -14,6 +14,7 @@
         <div id="tab" class="text-center">
             <ul class="nav nav-tabs">
                 <li class="sect-mentor"><a class="nav-item nav-link active" data-toggle="tab" role="tab" href="#profile">Profile</a></li>
+                <!-- if this is not the mentor's account, do not show this option -->
                 <% if current_user.isMentor %>
                   <li class="sect-mentor"><a class="nav-item nav-link" data-toggle="tab" role="tab" href="#students">My Students</a></li>
                 <% end %>
@@ -87,7 +88,7 @@
                       </div>
                     <% else %>
                       <div class="row">
-                        <%= link_to 'Send Message', edit_mentor_path(@mentor), :class => "btn btn-outline-dark"%>
+                        <%= link_to 'Start Chat', new_chat_path(mentor: @mentor.id), :class => "btn btn-outline-dark"%>
                       </div>
                     <% end %>
                   </div>
@@ -96,6 +97,13 @@
                 <!-- STUDENTS TAB -->
                 <div id="students" class="tab-pane">
                   <h1>My Students</h1>
+                  <!-- Loop through chats and display each one -->
+                  <% for conversation in @mentor.chats %>
+                    <div class="row">
+                      <h5>Conversation with <%= link_to conversation.studentName, student_path(conversation.student_id) %></h5>
+                      <%= link_to 'Show', chat_path(conversation.id), :class => 'btn btn-outline-dark' %>
+                    </div>
+                  <% end %>
                 </div>  <!-- END STUDENTS TAB -->
             </div>
 

@@ -2,6 +2,8 @@ class Mentor < ApplicationRecord
     # class relationships -> this establishes foreign_key for user account
     belongs_to :user_id, class_name: 'User'
 
+    has_many :chats, foreign_key: :mentor_id
+
     # define "fullname"
     def fullname
         return self.firstName + " " + self.lastName

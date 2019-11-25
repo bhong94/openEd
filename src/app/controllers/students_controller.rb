@@ -10,6 +10,7 @@ class StudentsController < ApplicationController
   # This method serves the student's profile page
   def show
     @mentors = Mentor.text_search(params[:query]).page(params[:page]).per_page(5)
+    @user = User.find(@student.user_id_id)
   end
 
   # GET /students/new

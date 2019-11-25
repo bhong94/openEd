@@ -118,41 +118,6 @@
   width: 1100px;
 }
 
-/* GENERAL STYLING */
-.col-md-8 {
-  margin: 2rem auto 8rem;
-  padding-top: 2rem;
-}
-.col-md-8 h1 {
-    font-size: 2.4rem;
-  }
-
-/* Mobile compatibility settings */
-/* half sizes of elements */
-@media (max-width: 768px)
-{
-  .caption h1
-{
-  font-size: 1.4rem;
-  letter-spacing: .15rem;
-  padding-bottom: .5rem;
-}
-
-.caption h3
-{
-  font-size: 1.1rem;
-  padding-bottom: 1.2rem;
-}
-
-/*btn style */
-.btn-lg
-{
-  padding: .5rem 1rem;
-  font-size: 1rem;
-}
-
-}
-
 /* PAGINATION SYLING taken from the will_pagination github wiki */
 .pagination {
   background: rgba(0, 0, 0, 0);;
@@ -208,4 +173,17 @@
 .search-bar
 {
   width: 10%;
+}
+
+.chatroom-sect
+{
+  padding-top: 8%;
+  padding-bottom: 8%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.chatroom-sect a
+{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }

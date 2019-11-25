@@ -13,9 +13,11 @@
         <div id="tab" class="text-center">
             <ul class="nav nav-tabs">
                 <li class="sect"><a class="nav-item nav-link" data-toggle="tab" role="tab" href="#profile">Profile</a></li>
-                <li class="sect"><a class="nav-item nav-link active" data-toggle="tab" role="tab" href="#search">Search Mentors</a></li>
-                <li class="sect"><a class="nav-item nav-link" data-toggle="tab" role="tab" href="#recommended">Recommended Mentors</a></li>
-                <li class="sect"><a class="nav-item nav-link" data-toggle="tab" role="tab" href="#myMentors">My Mentors</a></li>
+                <% if !current_user.isMentor %>
+                  <li class="sect"><a class="nav-item nav-link active" data-toggle="tab" role="tab" href="#search">Search Mentors</a></li>
+                  <li class="sect"><a class="nav-item nav-link" data-toggle="tab" role="tab" href="#myMentors">My Mentors</a></li>
+                <% else %>
+                <% end %>
             </ul>
             
             <div class="tab-content">
@@ -24,7 +26,7 @@
 
                   <div class="row">
                     <div class="container text-center">
-                      <h1><%= current_user.student.name %>'s Student Profile</h1>
+                      <h1><%= @student.name %>'s Student Profile</h1>
                     </div>
                   </div>
 
@@ -33,48 +35,51 @@
                     <div class="row">
                       <h5>
                         <strong>Name: </strong>
-                        <%= current_user.student.name %>
+                        <%= @student.name %>
                       </h5>
                     </div>
                     <div class="row">
                       <h5>
                         <strong>Email: </strong>
-                        <%= current_user.email %>
+                        <%= @user.email %>
                       </h5>
                     </div>
                     <div class="row">
                       <h5>
                         <strong>Location: </strong>
-                        <%= current_user.student.location %>
+                        <%= @student.location %>
                       </h5>
                     </div>
                     <div class="row">
                       <h5>
                         <strong>Budget: </strong>
-                        $<%= current_user.student.budget %>0 per lesson
+                        $<%= @student.budget %>0 per lesson
                       </h5>
                     </div>
                     <div class="row">
                       <h5>
                         <strong>Weakest Subject: </strong>
-                        <%= current_user.student.weakestSubject %>
+                        <%= @student.weakestSubject %>
                       </h5>
                     </div>
                     <div class="row">
                       <h5>
                         <strong>Favorite Subject: </strong>
-                        <%= current_user.student.favoriteSubject %>
+                        <%= @student.favoriteSubject %>
                       </h5>
                     </div>
                     <div class="row">
                       <h5>
                         <strong>Bio: </strong>
-                        <%= current_user.student.bio %>
+                        <%= @student.bio %>
                       </h5>
                     </div>
-                    <div class="row">
-                      <%= link_to 'Edit Profile', edit_student_path(@student), :class => "btn btn-outline-light btn-lg"%>
-                    </div>
+                    <% if !current_user.isMentor %>
+                      <div class="row">
+                        <%= link_to 'Edit Profile', edit_student_path(@student), :class => "btn btn-outline-light btn-lg"%>
+                      </div>
+                    <% else %>
+                    <% end %>
                   </div>
 
                 </div>
@@ -90,10 +95,10 @@
                   
                   <div class="container">
                     <div class="row">
-                      <%= form_tag student_path(current_user.student.id), :class => "search-form", method: :get do %>
+                      <%= form_tag student_path(@student.id), :class => "search-form", method: :get do %>
                           <%= text_field_tag :query, params[:query], :class => "search-bar" %>
                           <%= submit_tag "Search", name: nil, :class => "btn btn-outline-dark" %>
-                          <%= link_to 'View All', student_path(current_user.student.id), :class => "btn btn-outline-dark" %>
+                          <%= link_to 'View All', student_path(@student.id), :class => "btn btn-outline-dark" %>
                       <% end %>
                     </div>
 
@@ -117,14 +122,15 @@
 
                 </div>
 
-                <!-- RECOMMENDED TAB -->
-                <div id="recommended" class="tab-pane">
-
-                </div>
-
                 <!-- MY MENTORS TAB -->
                 <div id="myMentors" class="tab-pane">
-
+                  <h1>My Mentors</h1>
+                  <% for conversation in @student.chats %>
+                    <div class="row">
+                      <h5>Conversation with <%= link_to conversation.mentorName, mentor_path(conversation.mentor_id) %></h5>
+                      <%= link_to 'Show', chat_path(conversation.id), :class => 'btn btn-outline-dark' %>
+                    </div>
+                  <% end %>
                 </div>
             </div>
 

@@ -1,0 +1,36 @@
+<%= form_with(model: chat, local: true, class: 'chat-form') do |form| %>
+  <% if chat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(chat.errors.count, "error") %> prohibited this chat from being saved:</h2>
+
+      <ul>
+      <% chat.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.hidden_field :mentor_id, value: @mentor.id %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :mentorName, value: @mentor.fullname %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :studentName, value: current_user.student.name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<!-- Jquery script to automatically submit this form when page is loaded -->
+<script>
+  $(document).ready(function(){
+    $(".chat-form").submit();
+  });
+</script>

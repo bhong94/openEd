@@ -1,0 +1,39 @@
+<%= form_with(model: message, local: true) do |form| %>
+  <% if message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</h2>
+
+      <ul>
+      <% message.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label 'Message' %>
+    <%= form.text_area :body %>
+  </div>
+
+  <!-- this is a foreign key - must be HIDDEN from the user -->
+  <div class="field">
+    <%= form.hidden_field :chat_id, value: @chat.id %>
+  </div>
+
+  <!-- set the author of the message -->
+  <% if current_user.isMentor %>
+    <div class="field">
+      <%= form.hidden_field :author, value: @chat.mentorName %>
+    </div>
+  <% else %>
+    <div class="field">
+      <%= form.hidden_field :author, value: @chat.studentName %>
+    </div>
+  <% end %>
+  <!-- author field must also be kept hidden from the user -->
+
+  <div class="actions">
+    <%= form.submit 'Send Message' %>
+  </div>
+<% end %>

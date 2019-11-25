@@ -1,0 +1,21 @@
+<div class="chatroom-sect">
+  <div class="container text-center">
+    <% if current_user.isMentor %>
+      <h1>Chatroom with <%= @chat.studentName %></h1>
+    <% else %>
+      <h1>Chatroom with <%= @chat.mentorName %></h1>
+    <% end %>
+  </div>
+  <div class="container text-center">
+    <% for txt in @chat.messages %>
+      <div class="row">
+        <div class="msg-container">
+          <strong><ins><%= txt.author %>:</ins></strong>
+          "<%= txt.body %>" <i>(<%= txt.created_at.in_time_zone('Eastern Time (US & Canada)') %>)</i>
+        </div>
+      </div>
+    <% end %>
+    <%= link_to 'Send New Message', new_message_path(chatId: @chat.id), :class => 'btn btn-outline-dark' %>
+  </div>
+  
+</div>

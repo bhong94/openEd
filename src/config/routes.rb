@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :messages
+  resources :chats
   devise_for :users, controllers: { registrations: "registrations" }
   resources :mentors
   resources :students
