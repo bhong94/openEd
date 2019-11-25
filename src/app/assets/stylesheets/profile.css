@@ -10,6 +10,12 @@
     border: solid rgba(0, 0, 0, 0.6) 1px;
 }
 
+.sect-mentor
+{
+    width: 50%;
+    border: solid rgba(0, 0, 0, 0.6) 1px;
+}
+
 .nav-link
 {
     color: black;

@@ -82,8 +82,6 @@
                 <!-- SEARCH TAB -->
                 <div id="search" class="tab-pane active">
 
-                  
-
                   <div class="row">
                     <div class="container text-center">
                       <h1>Search For A Mentor</h1>
@@ -94,7 +92,8 @@
                     <div class="row">
                       <%= form_tag student_path(current_user.student.id), :class => "search-form", method: :get do %>
                           <%= text_field_tag :query, params[:query], :class => "search-bar" %>
-                          <%= submit_tag "Search", name: nil %>
+                          <%= submit_tag "Search", name: nil, :class => "btn btn-outline-dark" %>
+                          <%= link_to 'View All', student_path(current_user.student.id), :class => "btn btn-outline-dark" %>
                       <% end %>
                     </div>
 

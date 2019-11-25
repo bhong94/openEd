@@ -13,46 +13,90 @@
         <!-- TAB SECTION -->
         <div id="tab" class="text-center">
             <ul class="nav nav-tabs">
-                <li class="sect"><a class="nav-item nav-link active" data-toggle="tab" role="tab" href="#dash">Dashboard</a></li>
-                <li class="sect"><a class="nav-item nav-link" data-toggle="tab" role="tab" href="#search">Search Tutors</a></li>
-                <li class="sect"><a class="nav-item nav-link" data-toggle="tab" role="tab" href="#recommended">Recommended Tutors</a></li>
+                <li class="sect-mentor"><a class="nav-item nav-link active" data-toggle="tab" role="tab" href="#profile">Profile</a></li>
+                <% if current_user.isMentor %>
+                  <li class="sect-mentor"><a class="nav-item nav-link" data-toggle="tab" role="tab" href="#students">My Students</a></li>
+                <% end %>
             </ul>
             
+            <!-- TAB CONTENT -->
             <div class="tab-content">
-                <div id="dash" class="tab-pane active">
 
-                    <div class="wrapper">
-                        <nav id="sidebar">
-                            <div class="sidebar-header">
-                                <h3>Dashboard</h3>
-                            </div>
-                            <ul class="list-unstyled components">
-                                <p>Dummy Heading</p>
-                                <li><a href="#">option 1</a></li>
-                                <li><a href="#">option 2</a></li>
-                                <li><a href="#">option 3</a></li>
-                                <li><a href="#">option 4</a></li>
-                            </ul>
-                        </nav>
-                        <div id="dashboard-sect">
-                            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                                <div class="container-fluid">
-                                    <button type="button" id="sidebarCollapse" class="btn btn-info">
-                                        <i class="fas fa-align-left"></i>
-                                        <span>Toggle Sidebar</span>
-                                    </button>
-                                </div>
-                            </nav>
-                        </div>
+                <!-- MENTOR PROFILE TAB -->
+                <div id="profile" class="tab-pane active">
+
+                  <div class="row">
+                    <div class="container text-center">
+                      <h1><%= @mentor.fullname %>'s Mentor Profile</h1>
                     </div>
+                  </div>
 
+                  <!-- Account details -->
+                  <div class="container text-center">
+                    <div class="row">
+                      <h5>
+                        <strong>Name: </strong>
+                        <%= @mentor.fullname %>
+                      </h5>
+                    </div>
+                    <div class="row">
+                      <h5>
+                        <strong>Email: </strong>
+                        <%= @email %>
+                      </h5>
+                    </div>
+                    <div class="row">
+                      <h5>
+                        <strong>College: </strong>
+                        <%= @mentor.collegeName %>
+                      </h5>
+                    </div>
+                    <div class="row">
+                      <h5>
+                        <strong>Year: </strong>
+                          <%= @mentor.collegeYear %>
+                      </h5>
+                    </div>
+                    <div class="row">
+                      <h5>
+                        <strong>Major: </strong>
+                        <%= @mentor.major %>
+                      </h5>
+                    </div>
+                    <div class="row">
+                      <h5>
+                        <strong>Specilize in teaching: </strong>
+                        <%= @mentor.specialty %>
+                      </h5>
+                    </div>
+                    <div class="row">
+                      <h5>
+                        <strong>Bio: </strong>
+                        <%= @mentor.bio %>
+                      </h5>
+                    </div>
+                    <div class="row">
+                      <h5>
+                        <strong>Hourly Wage: </strong>
+                        $<%= @mentor.hourlyWage %>0 per hour
+                      </h5>
+                    </div>
+                    <% if current_user.isMentor %>
+                      <div class="row">
+                        <%= link_to 'Edit Profile', edit_mentor_path(@mentor), :class => "btn btn-outline-dark"%>
+                      </div>
+                    <% else %>
+                      <div class="row">
+                        <%= link_to 'Send Message', edit_mentor_path(@mentor), :class => "btn btn-outline-dark"%>
+                      </div>
+                    <% end %>
+                  </div>
                 </div>
-                <div id="search" class="tab-pane fade">
-                    
-                </div>
-                <div id="recommended" class="tab-pane fade">
-
-                </div>
+  
+                <!-- STUDENTS TAB -->
+                <div id="students" class="tab-pane">
+                  <h1>My Students</h1>
+                </div>  <!-- END STUDENTS TAB -->
             </div>
 
         </div>   
@@ -66,51 +110,5 @@
           <p>Brandon Hong - Copyright &copy; 2019</p>
         </div>
       </footer>
-
-      <!-- Script Sources -->
-      <%= javascript_include_tag 'bootstrap.min.js' %>
     </body>
   </html>
-
-
-<p>
-  <strong>Firstname:</strong>
-  <%= @mentor.firstName %>
-</p>
-
-<p>
-  <strong>Lastname:</strong>
-  <%= @mentor.lastName %>
-</p>
-
-<p>
-  <strong>Bio:</strong>
-  <%= @mentor.bio %>
-</p>
-
-<p>
-  <strong>Hourlywage:</strong>
-  <%= @mentor.hourlyWage %>
-</p>
-
-<p>
-  <strong>Collegename:</strong>
-  <%= @mentor.collegeName %>
-</p>
-
-<p>
-  <strong>Major:</strong>
-  <%= @mentor.major %>
-</p>
-
-<p>
-  <strong>Collegeyear:</strong>
-  <%= @mentor.collegeYear %>
-</p>
-
-<p>
-  <strong>Resume:</strong>
-  <%= @mentor.resume %>
-</p>
-
-<%= link_to 'Edit', edit_mentor_path(@mentor) %> |

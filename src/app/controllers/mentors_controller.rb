@@ -10,6 +10,7 @@ class MentorsController < ApplicationController
   # GET /mentors/1
   # GET /mentors/1.json
   def show
+    @email = User.find(@mentor.user_id_id).email
   end
 
   # GET /mentors/new
@@ -68,7 +69,7 @@ class MentorsController < ApplicationController
     end
 
     # base-level input validation
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # only permit these fields to be submitted.
     def mentor_params
       params.require(:mentor).permit(:firstName, :lastName, :bio, :hourlyWage, :collegeName, :major, :collegeYear, :resume, :user_id_id, :specialty)
     end

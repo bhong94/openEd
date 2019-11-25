@@ -7,8 +7,7 @@ class StudentsController < ApplicationController
     @students = Student.all
   end
 
-  # GET /students/1
-  # GET /students/1.json
+  # This method serves the student's profile page
   def show
     @mentors = Mentor.text_search(params[:query]).page(params[:page]).per_page(5)
   end
