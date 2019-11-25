@@ -7,10 +7,10 @@ Ruby version 2.6.4p104
 Rails version 5.2.3
 
 Installing this Repository:
-git clone https://github.com/bhong94/openEd
+>git clone https://github.com/bhong94/openEd
 
 Once you've cloned this repository, run bundle to install gems:
-bundle install
+>bundle install
 
 This project utilizes postgreSQL version 9.2.24
 To install using yum, run the command:
