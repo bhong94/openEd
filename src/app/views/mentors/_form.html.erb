@@ -1,0 +1,57 @@
+<%= form_with(model: mentor, local: true) do |form| %>
+  <% if mentor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(mentor.errors.count, "error") %> prohibited this mentor from being saved:</h2>
+
+      <ul>
+      <% mentor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :firstName %>
+    <%= form.text_field :firstName %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lastName %>
+    <%= form.text_field :lastName %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bio %>
+    <%= form.text_area :bio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hourlyWage %>
+    <%= form.text_field :hourlyWage %>
+  </div>
+
+  <div class="field">
+    <%= form.label :collegeName %>
+    <%= form.text_field :collegeName %>
+  </div>
+
+  <div class="field">
+    <%= form.label :major %>
+    <%= form.text_field :major %>
+  </div>
+
+  <div class="field">
+    <%= form.label :collegeYear %>
+    <%= form.text_field :collegeYear %>
+  </div>
+
+  <div class="field">
+    <%= form.label 'Specialty (choose your strongest subject)' %>
+    <%= form.text_field :specialty %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

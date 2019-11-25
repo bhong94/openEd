@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <title>OpenEd</title>
+
+    </head>
+    <body data-spy="scroll" data-target="#navbarResponsive">
+      <header>
+
+        <!-- The navbar will be rendered here by the layout/application.html.erb file -->
+
+        <!-- TAB SECTION -->
+        <div id="tab" class="text-center">
+            <ul class="nav nav-tabs">
+                <li class="sect"><a class="nav-item nav-link active" data-toggle="tab" role="tab" href="#dash">Dashboard</a></li>
+                <li class="sect"><a class="nav-item nav-link" data-toggle="tab" role="tab" href="#search">Search Tutors</a></li>
+                <li class="sect"><a class="nav-item nav-link" data-toggle="tab" role="tab" href="#recommended">Recommended Tutors</a></li>
+            </ul>
+            
+            <div class="tab-content">
+                <div id="dash" class="tab-pane active">
+
+                    <div class="wrapper">
+                        <nav id="sidebar">
+                            <div class="sidebar-header">
+                                <h3>Dashboard</h3>
+                            </div>
+                            <ul class="list-unstyled components">
+                                <p>Dummy Heading</p>
+                                <li><a href="#">option 1</a></li>
+                                <li><a href="#">option 2</a></li>
+                                <li><a href="#">option 3</a></li>
+                                <li><a href="#">option 4</a></li>
+                            </ul>
+                        </nav>
+                        <div id="dashboard-sect">
+                            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                                <div class="container-fluid">
+                                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                                        <i class="fas fa-align-left"></i>
+                                        <span>Toggle Sidebar</span>
+                                    </button>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="search" class="tab-pane fade">
+                    
+                </div>
+                <div id="recommended" class="tab-pane fade">
+
+                </div>
+            </div>
+
+        </div>   
+        <!-- END TAB SECTION -->
+      </header>
+
+      
+
+      <footer>
+        <div class="container">
+          <p>Brandon Hong - Copyright &copy; 2019</p>
+        </div>
+      </footer>
+    
+    </body>
+  </html>
+
+<p>
+  <strong>Name:</strong>
+  <%= @student.name %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @student.bio %>
+</p>
+
+<p>
+  <strong>Budget:</strong>
+  <%= @student.budget %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @student.location %>
+</p>
+
+<%= link_to 'Edit', edit_student_path(@student) %> |

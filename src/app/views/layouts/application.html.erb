@@ -7,10 +7,59 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'bootstrap.min.css' %>
+    <%= stylesheet_link_tag 'style.css' %>
+    <%= javascript_include_tag 'bootstrap.min.js' %>
+
+    <!-- NAVBAR SECTION -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+          
+          <h2 class="navbar-brand"><%= link_to 'OpenEd', root_path(:user => @user), :style => 'color: white' %></h2>
+          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <span class="navbar-nav mr-auto">       <!-- This is a spacer to move dropdown menu to the right -->
+            </span>
+            <ul class="navbar-nav">
+                <% if current_user %>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <%= current_user.email %>
+                      
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Dashboard</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                    </div>
+                </li>
+                <% else %>
+                <% end %>
+                <% if current_user %>
+                <li class="nav-item">
+                    <%= link_to 'Logout', destroy_user_session_path , :class => "nav-link", method: :delete %>
+                </li>
+                <% else %>
+                <li class="nav-item">
+                    <%= link_to 'Login', new_user_session_path , :class => "nav-link" %>
+                </li>
+                <li class="nav-item">
+                    <%= link_to 'Register', new_user_registration_path , :class => "nav-link" %>
+                </li>
+                <% end %>
+            </ul>
+          </div>
+        </nav>
+        <!-- END NAVBAR SECTION -->
   </head>
 
   <body>
-    <%= yield %>
+   
+    <%= yield %> 
+    <!-- <%= render 'layouts/alerts' %> -->
   </body>
 </html>
 
